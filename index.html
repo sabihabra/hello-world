@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tableau de bord interactif</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="layout">
+      <aside class="sidebar">
+        <h1>PulseBoard</h1>
+        <nav>
+          <button class="nav-btn active" data-section="overview">Vue globale</button>
+          <button class="nav-btn" data-section="sales">Ventes</button>
+          <button class="nav-btn" data-section="traffic">Trafic</button>
+        </nav>
+      </aside>
+
+      <main class="content">
+        <header>
+          <h2 id="section-title">Vue globale</h2>
+          <label class="toggle">
+            <input id="theme-toggle" type="checkbox" />
+            <span>Mode sombre</span>
+          </label>
+        </header>
+
+        <section class="cards" aria-label="KPI">
+          <article class="card">
+            <p>Revenu du jour</p>
+            <strong id="kpi-revenue">€0</strong>
+          </article>
+          <article class="card">
+            <p>Nouveaux clients</p>
+            <strong id="kpi-customers">0</strong>
+          </article>
+          <article class="card">
+            <p>Taux de conversion</p>
+            <strong id="kpi-conversion">0%</strong>
+          </article>
+          <article class="card">
+            <p>Commandes</p>
+            <strong id="kpi-orders">0</strong>
+          </article>
+        </section>
+
+        <section class="panel" aria-label="Graphique simplifié">
+          <div class="panel-head">
+            <h3>Tendance hebdomadaire</h3>
+            <select id="metric-select">
+              <option value="revenue">Revenu</option>
+              <option value="customers">Clients</option>
+              <option value="orders">Commandes</option>
+            </select>
+          </div>
+          <div id="chart" class="chart" role="img" aria-label="Graphique en barres"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
