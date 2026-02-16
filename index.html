@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tableau de bord DSI</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="layout">
+      <aside class="sidebar">
+        <h1>DSI Insight</h1>
+        <p class="sidebar-subtitle">Pilotage opérationnel</p>
+        <nav>
+          <button class="nav-btn active" data-section="global">Vue DSI</button>
+          <button class="nav-btn" data-section="infrastructure">Infrastructure</button>
+          <button class="nav-btn" data-section="security">Cybersécurité</button>
+          <button class="nav-btn" data-section="support">Support utilisateurs</button>
+        </nav>
+      </aside>
+
+      <main class="content">
+        <header>
+          <div>
+            <h2 id="section-title">Vue DSI</h2>
+            <p id="section-description" class="section-description">
+              Suivi consolidé des services numériques et de la performance IT.
+            </p>
+          </div>
+          <label class="toggle">
+            <input id="theme-toggle" type="checkbox" />
+            <span>Mode sombre</span>
+          </label>
+        </header>
+
+        <section class="cards" aria-label="KPI DSI">
+          <article class="card">
+            <p id="kpi-1-label">Disponibilité SI</p>
+            <strong id="kpi-1-value">0%</strong>
+          </article>
+          <article class="card">
+            <p id="kpi-2-label">Incidents critiques</p>
+            <strong id="kpi-2-value">0</strong>
+          </article>
+          <article class="card">
+            <p id="kpi-3-label">Tickets résolus (J)</p>
+            <strong id="kpi-3-value">0</strong>
+          </article>
+          <article class="card">
+            <p id="kpi-4-label">Projets dans les délais</p>
+            <strong id="kpi-4-value">0%</strong>
+          </article>
+        </section>
+
+        <section class="panel" aria-label="Graphique DSI">
+          <div class="panel-head">
+            <h3 id="chart-title">Tendance hebdomadaire</h3>
+            <select id="metric-select"></select>
+          </div>
+          <div id="chart" class="chart" role="img" aria-label="Graphique en barres"></div>
+          <p id="chart-footnote" class="chart-footnote">Données simulées sur 7 jours.</p>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
